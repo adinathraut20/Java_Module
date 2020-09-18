@@ -1,0 +1,3 @@
+module JavaM {
+	System.out.println("hello World")
+}

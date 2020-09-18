@@ -1,0 +1,22 @@
+###### Day 1 ######
+
+OAK language  -> java language  
+developed by James in 1995
+by Sun Micro System
+
+editor .java file -> compiler -> byte code (.class file)  -> jvm -> machine code 
+
+oop's
+
+abstraction 
+polymorsphism -> compile time method overloading 
+	      -> run time overriding
+encapsulation  -> to bind data and code together
+
+Inheritance
+
+javac file.java
+java classname
+
+ 
+
