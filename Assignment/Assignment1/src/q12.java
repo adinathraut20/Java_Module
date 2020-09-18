@@ -9,8 +9,10 @@ class EmployeeSalary{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Employee's salary : ");	
 		double Salary = sc.nextDouble();
-		double HRA=0;
-		double DA=0;
+		double HRA;
+		double DA;
+		HRA=0;
+		DA=0;
 		if(Salary < 1000){
 			HRA = 0.1*Salary;
 			DA = 0.9*Salary;
