@@ -7,8 +7,9 @@ import java.util.Scanner;
 class SumCal2D {
 		public static void main(String []args){
 				Scanner sc = new Scanner(System.in);
-				int r = 5;
-				int c = 5;
+				System.out.println("Enter Row and Column : ");
+				int r = sc.nextInt();
+				int c = sc.nextInt();
 				System.out.println("Enter Array Elements : ");
 				int arr[][] = new int[r][c];
 				for(int i=0;i<r;i++){
