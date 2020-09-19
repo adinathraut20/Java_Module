@@ -12,7 +12,7 @@ class SimpleInterest {
 		double interest = sc.nextDouble();
 		System.out.println("Enter Time period in Yrs : ");
 		double time = sc.nextDouble();
-		double Tamount = Amount*(1 + (interest*time)/100);
-		System.out.println("Simple Interest : "+(Tamount-Amount)+" (Rs)");
+		double si = (Amount*interest*time)/100;
+		System.out.println("Simple Interest : "+si+" (Rs)");
 		}
 }

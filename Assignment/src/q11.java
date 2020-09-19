@@ -23,6 +23,11 @@ class Swap{
 			a=a+b;
 			b=a-b;
 			a=a-b;
+			//Swap one line code
+			//b = (a+b)-(a=b);
+
 			System.out.println("After Swapping Vairable 1 :"+a+" Variable 2 :"+b);
 			}
 	}
+
+
