@@ -1,0 +1,42 @@
+Adinath Raut : 200240320003
+
+for loop Syntax:
+
+for(init;condition;incr/decr){  
+// code to be executed 
+}
+
+//for loop  
+for(int i=1;i<=10;i++){  
+System.out.println(i);  
+}
+
+
+for(;;){  
+//code to be executed  
+}
+
+
+
+
+
+
+
+
+
+
+For Each loop Syntax:
+
+for (type var : array) 
+{ 
+    statements using var;
+}
+
+
+The foreach loop is a convenient way to retrieve elements of an array or a collection. 
+It can be used as an alternative to the for a loop. 
+It is referred as the foreach loop because it iterates through each element of the array or the collection. 
+The syntax of the foreach loop is as follows.
+
+
+
