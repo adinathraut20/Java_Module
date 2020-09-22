@@ -18,7 +18,6 @@ class Employee{
 	// static double totalSalary;
 	Employee(double salary){
 		
-		empNo++;
 		this.salary = salary;
 		totalSalary += salary;
 	}
@@ -26,6 +25,10 @@ class Employee{
 		
 		System.out.println("\nEmployee No. : " + empNo + "  Salary : " + salary);
 	}
+	void setEmpNo(int i){
+		empNo = i;
+	}
+
 	static void  displayTotalSalary(){
 		System.out.println("\nTotal Salary : " + totalSalary);
 	}
@@ -44,6 +47,7 @@ class EmployeeDemo{
 			System.out.println("Enter Salary for "+(i+1)+"th Employee : " );
 			double str = sc.nextDouble();
 			arr[i] = new Employee(str);
+			arr[i].setEmpNo(i+1);
 		}
 
 
