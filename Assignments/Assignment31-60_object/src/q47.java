@@ -21,7 +21,7 @@ class B extends A{
 		System.out.println("Class B construtor");
 	}
 	B(int y){
-		super();
+		super(14);
 		System.out.println("Class B Parameterised construtor");
 	}
 		
