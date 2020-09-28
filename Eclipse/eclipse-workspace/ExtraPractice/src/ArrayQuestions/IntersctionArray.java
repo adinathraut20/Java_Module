@@ -16,7 +16,7 @@ public class IntersctionArray {
 			int arr1len = arr1.length;
 			int arr2len = arr2.length;
 			
-			int intersect = 0;
+			int intersect = -1;
 			for (int i = 0,j = 0; i <arr1len && j<arr2len ; ) {
 				if(arr1[i] == arr2[j]) {
 					intersect = arr1[i];
