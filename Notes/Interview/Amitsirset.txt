@@ -1,0 +1,43 @@
+1)Static variable also known as?(amitsir q1)
+ans:class level variable or fields.
+
+2)In which memory location does instance variables are store?(amitsir q2)
+ans: Heap Memory
+
+3)A package is a collection of (amitsir q3)
+ans: classes and interfaces
+
+4)What’s the most reliable way to test whether two double values are equal?(amitsir q4)
+=> Double.compare(d1, d2) == 0
+
+5)What will happen if we provide concrete implementation of method in interface?(amitsir q5)
+ans: Compilation failure
+
+Explanation: The methods of interfaces are always abstract. They provide only method definition.
+
+6)when Java encounters a null reference is called as______error.(amitsir q6)
+ans.NullPointerException
+
+
+7)Java has its origin in-----------(amitsir q7)
+ans: Oak programming language
+
+8) Which function is used to convert string to Number in java program?(amitsir q8)
+ans: valueOf()
+
+9)Which package contains the Random class?(amitsir q9)
+ ans:The Random class is available in the java.util package.
+
+10) Every method of a ……….. is implicitly final.(amitsir q10)
+ans:final class
+
+extra questions:
+1) what is the base class in Java from which all classes are derived?(amitsir extra q1)
+Ans:java.lang.object
+
+2)What is the difference between “==” and “equals(…)” in comparing Java String objects?(amitsir extra q2)
+ans: When you use “==” (i.e. shallow comparison), you are actually comparing the two object
+ references to see if they point to the same object. 
+When you use “equals(…)”, which is
+ a “deep comparison” that compares the actual string values
+

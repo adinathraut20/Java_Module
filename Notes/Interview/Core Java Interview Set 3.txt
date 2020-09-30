@@ -1,0 +1,43 @@
+1. Explain abstract class in Java.
+2. What is the need of abstract class?
+3. Explain interface in Java8.
+4. Why do we need interfaces?
+5. Using interface reference we can invoke only those methods which are present in it.
+Given:
+
+interface myinterface
+{
+	void disp();
+}
+public class MyClass
+{
+	public static void main(String[] args)
+	{
+		myinterface m1,m2=null;
+		m1.disp();
+		m1.fun();
+		m1.toString();
+		m1.equals(m2);
+		m1.hashCode();
+	}
+}
+
+Which of the above invocations are illegal at compile-time?
+6. When to use interface and when to use abstract class? Explain with example.
+7. What is the difference between abstract class and interface in Java8?
+8. What are the default methods in Java8 interfaces?
+9. What is the actual use of “default” method in interface?
+10. Why do we need static methods in interface?
+11. Explain this vs super in case of constructor invocation.
+12. What do u mean by immutable class?
+13. How to create immutable class in java?
+14. Difference bet’n  StringBuilder and StringBuffer.
+15. When u try to print any reference variable in java, u get some meaningful output. What do u mean by this?
+16. Why can’t we instantiate abstract class?
+17. Can abstract class have constructors in Java?
+18. Can abstract classes implements interface in Java? Do they require to implement all methods?
+19. Can abstract class be final in Java?
+20. Can abstract class have static methods in Java?
+21. Is it necessary for abstract class to have abstract method?
+22. Can abstract class contains main method in Java?
+23. What do you mean by “Functional Interface”?

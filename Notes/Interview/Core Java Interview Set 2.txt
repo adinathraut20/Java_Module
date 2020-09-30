@@ -1,0 +1,35 @@
+1. What is instanceOf operator?
+2. Give an example of instanceOf operator.
+3. What is upcasting and downcasting?
+4. What is the risk involved in downcasting ? How instanceof operator provides solution for that?
+5. 
+Given, in C++, 
+MyClass m1;
+MyClass m2=m1; 
+And in Java,
+MyClass m1=new MyClass();
+MyClass m2=m1;
+6. In Java copy constructor is not provided implicitly. Can we provide it explicitly and if yes when exactly it will be called?
+7. How many types of inheritance allowed in java ?
+What is the difference?
+8. Why “Multiple Inheritance” is not supported in Java?
+9. Explain access modifiers in java.
+10. What is super keyword?
+11. What is @Override? What does it do?
+12. What are Overriding rules in java?
+13. What is Object class?
+14. What is “ClassCastException” ? What is the solution for that?
+15. Where can we apply final keyword in java ?
+16. Can a class be defined a both final and abstract?
+17. Explain “System.out.println”. 
+18. Explain “public static void main”.
+19. Can we use “this” with static member ?
+20. Explain static block or static initializer.
+21. Where have u seen an application of static block or initializer in java?
+22. What is non-static block?
+23. Can static member function access non-static data? 
+24. Can non-static member function access static data?
+25. Explain constructor invocation in case of inheritance.
+26. In case of inheritance, if parent class does not have no-arg constructor, what happens ? How do u solve the problem?
+27. In case of an array which variable is created automatically? Can u modify it? If no, why?
+28. What is Class in java?

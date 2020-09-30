@@ -12,13 +12,15 @@ class A{
 class B extends A{
 	void m1() throws FileNotFoundException{
 		System.out.println("m1 B");
+		
 	}
 }
 public class OverridingRule {
+	static String s = "adf";
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		char ch = s.charAt(0);
+		System.out.println(ch);
 	}
 
 }
