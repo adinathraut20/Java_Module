@@ -1,3 +1,5 @@
+package sep24;
+
 interface Foo{
 	static void m1(){
 		System.out.println("static inteface method");

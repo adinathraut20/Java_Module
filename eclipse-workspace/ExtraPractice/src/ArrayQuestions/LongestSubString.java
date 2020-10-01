@@ -14,7 +14,7 @@ public class LongestSubString {
         if(s.length() == 0){
             return 1;
         }
-        int check = s.charAt(0);
+       // int check = s.charAt(0);
        
         int max =1;        
         for(int i=0;i<s.length();i++){
