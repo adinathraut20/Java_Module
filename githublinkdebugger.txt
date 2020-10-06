@@ -14,3 +14,5 @@ https://github.com/A-k-soni/JAVA-assignment.git
 https://github.com/Abhijit-Bhosale/Core_java_Ass.git
 
 https://github.com/abhisheksherekar/CORE_JAVA_Assignment
+
+https://github.com/adityanagpure/core_java.git
