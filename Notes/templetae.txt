@@ -1,0 +1,21 @@
+ArrayList<${name}> arr = new ArrayList<${name}>();
+
+Collections.sort(arr, new Comparator<${dataType}>() {
+		        @Override
+		        public int compare(${dataType} obj1, ${dataType} obj2) {
+		            return obj1.getKey().compareTo(obj2.getValue());
+		        }});
+
+for (Entry<${type1}, ${type2}> itr : mp.entrySet()){
+
+}
+
+HashSet<${type}> hSet1 = new HashSet<${type}>(); 
+
+Map<${type1}, ${type2}> mp = new HashMap<${type1}, ${type2}>();
+
+sc = new Scanner(System.in);
+
+Set<${type}> set1 = new HashSet<${type}>(); 
+
+

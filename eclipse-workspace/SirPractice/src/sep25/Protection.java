@@ -1,4 +1,4 @@
-package d1;
+package sep25;
 public class Protection{
 	private int pr;
 	int def;

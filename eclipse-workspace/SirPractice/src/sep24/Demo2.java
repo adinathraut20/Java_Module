@@ -1,5 +1,3 @@
-package sep24;
-
 class Outer{
 	static class Foo{
 		void m1(){

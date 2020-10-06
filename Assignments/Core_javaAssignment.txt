@@ -1,4 +1,4 @@
-[ To understand any java concept you can refer this video link : Learn Core Java ]
+﻿[ To understand any java concept you can refer this video link : Learn Core Java ]
 1. Write a program to print Hello World. Compile and run it using command prompt.
 2. Write a program to declare a variable named rollNo of integer type. Assign it a value (let say 100) to it and print the following statement roll no = 100 .
 3. Find the result of following expressions. You need to determine the primitive data type of the variable by looking carefully the given expression and initialize variables by any random value.

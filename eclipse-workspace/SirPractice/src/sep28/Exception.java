@@ -2,7 +2,12 @@ package sep28;
 
 import java.io.IOException;
 
-public class Exception {
+public class Exception extends Throwable{
+
+	public Exception(String string) {
+		// TODO Auto-generated constructor stub
+		
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
