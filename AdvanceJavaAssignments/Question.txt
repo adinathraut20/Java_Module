@@ -1,0 +1,26 @@
+ADVANCE JAVA ASSINGNMENT
+JDBC
+
+01. Create a program to create table named student having columns [ rno, name, marks, date of birth].
+02. Create a program to insert record in the student table.
+03. Create a program to select all of the student records.
+04. Create a program to display the student records in sorted order of marks [ highest to lowest ].
+05. Create a program to display no. of student records present in the table.
+06. Create a program to perform CRUD operations for student [ rno, name, marks, date of birth ] using Statement. Take values from keyboard.
+07. Create a program to search student record on the basis of given roll no.
+08. Create a program to display average marks obtained by the student.
+09. Create a program to perform CRUD operation for student [ rno,name,marks,date of birth ] using PreparedStatement. Take values from keyboard.
+10. Make a program that displays number of columns present in the given table.
+11. Create a program to call a stored procedure, created to insert student record [ rno, name, marks].
+12. There is need to store employee information [like : employee id, name, salary, join date] and employee's address information [like : address id, city, country, employee id]. Employee and Address information should be stored in separate tables. Create a program which can insert employee and address records. First store employee record and then address record. Make sure, if the address record is not saved then employee transaction should be rollbacked.
+13. Select the employee records with their address.
+14. Select the address of an employee whose employee id is given.
+15. Select all the employees who are in the given city.
+16. Select the employee who gets highest salary.
+17. Select all the employees who has experience more than 5 years.
+18. Create an event driven program as follows to manage the daily expenses
+a. create a table expense with columns expense_id, item, price, purchase_date to store expense record.
+b. create a java bean class named dto.Expense with properties expenseId, item, price, purchaseDate.
+c. create a dao interface dao.ExpenseDao that has method declaration for insert, update, delete and select the expense record.
+d. create a dao class dao.ExpenseDaoImple that implements ExpenseDao and overrides all methods.
+e. create p01.Main class to demonstrate CRUD operation written in DAO class.

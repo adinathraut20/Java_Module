@@ -27,6 +27,7 @@ public class LoginPage extends HttpServlet {
 		try {
 			String Uname =  request.getParameter("uname");
 			String pass = request.getParameter("pass");
+			System.out.println(request);
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
