@@ -58,6 +58,8 @@ public class q12 {
 			sc.close();
 		} catch (ClassNotFoundException | SQLException e) {
 			con.rollback(save);
+			con.commit();
+			con.close();
 			e.printStackTrace();
 		} 
 

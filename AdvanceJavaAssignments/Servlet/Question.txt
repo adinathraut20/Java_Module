@@ -1,0 +1,21 @@
+SERVLET ASSIGNMENT
+19. Create a servlet that prints WELCOME TO SERVLET WORLD using html's heading tag. 
+20. Create a servlet that displays system date in the dd/mm/yyyy  format.
+21. Create a servlet that prints following error message using red color font.“CREATING GUI IS COMPLEX USING SERVLET”. 
+22. Create an html page having two buttons first labeled with GET REQUEST DEMO and second with POST REQUEST DEMO. Create a Servlet    that overrides both doGet and doPost methods. After clicking first button doGet method should be called that prints “YOU SELECTED GET TYPE REQUEST”. After clicking second button doPost method should be called that prints “YOU SELECTED POST TYPE REQUEST”.  
+23. Create an html page that has a textfield to take the user name. After submitting the page Servlet should be called that prints Welcome message with entered name like WELCOME SARJE. 
+24.  Create an html page Calci.html that has a GUI to take two numbers, to make choice from addition, subtraction, multiplication or division and a submit button. After submitting the form, request should be generated for ArithmeticServlet. This servlet should get two numbers entered by the user and his choice. Perform the requested operation and display the result in the same servlet.
+25. Create an html page to take the name. Take this entered user name on a servlet. Create another servlet that prints the name taken by the first servlet.
+26. Create a Servlet that prints number of visits by a particular user. 
+27. Create a Servlet that prints the real path corresponding to the given virtual path. 
+28. Do context parameter entry in web.xml file for jdbc information like jdbc driver class name, url, username, password. Create one servlet that reads these context parameter values from web.xml file and prints them.
+29. Create a Servlet that prints header information like host (server/domain), user-agent (web browser), mime type in the separate lines. 
+30. Create a Servlet named RegistraionFormServlet that has GUI for registration form to take information like name (textfield), gender(radio button), city(combobox), languages (checkbox) and submit button.
+After submitting this form request should go to RegistraionServlet. This servlet should check if all the information are filled. If filled then response should be a success message otherwise response should be redirected to the RegistraionFormServlet to complete the information. Make sure the previously entered information are retained.
+31. Create an html page book_form.html that has a GUI to take book information like book no., book title, author name, publisher name, year of publish and a submit button.
+ After submitting the form, request should be generated for AddServlet. This servlet should get all book information entered by the user and this information should be stored in the data base table named book. This Servlet should have one link BOOK LIST. When this link is clicked request should be generated for BookListServlet. This servlet should display all book record present in the book database table.
+32. Create a program to manage GuestBook having properties guestId, guestName, date and message. 
+a) Create a GuestbookServlet that is mapped to guestbook to display the current guestbook messages. 
+b) Add a form at the bottom allowing users to submit a new guestbook message. Like below
+
+

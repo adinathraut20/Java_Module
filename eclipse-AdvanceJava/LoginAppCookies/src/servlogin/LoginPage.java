@@ -1,7 +1,6 @@
 package servlogin;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,10 +11,10 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class LoginPage extends HttpServlet {
@@ -24,11 +23,12 @@ public class LoginPage extends HttpServlet {
 		// TODO Auto-generated method stub
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		resp.sendRedirect("LoginPage.html");
 	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
@@ -46,10 +46,11 @@ public class LoginPage extends HttpServlet {
 			
 			if(rs.next()) {
 				
-				HttpSession session = request.getSession(true);
-				session.setAttribute("Uname", rs.getString(1));
+				Cookie cookie = new Cookie("Uname", rs.getString(1));
+				response.addCookie(cookie);
 				RequestDispatcher rd = request.getRequestDispatcher("home1");
-				rd.forward(request, response);
+			    rd.forward(request, response);
+			  //response.sendRedirect("main1.html");
 //				System.out.println(rs.getString(1));
 //				response.setContentType("text/plain");
 //				PrintWriter out  = response.getWriter();
