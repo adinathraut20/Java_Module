@@ -8,9 +8,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-import q6.StudentClass.Student;
-import q6.StudentServices.StudentService;
-import q6.StudentImplement.StudentImple;
+import q9.StudentClass.Student;
+import q9.StudentServices.StudentService;
+import q9.StudentImplement.StudentImple;
 
 public class MainClass {
 
@@ -20,11 +20,12 @@ public class MainClass {
 		StudentService studentService = new StudentImple();
 		
 		while(true){
-			System.out.println("0 : Exit");
+			
 			System.out.println("1 : Show Student list");
 			System.out.println("2 : Add Student record");
 			System.out.println("3 : Modify Student record");
 			System.out.println("4 : Remove Student record");
+			System.out.println("0 : Exit");
 			int choice = sc.nextInt();
 			switch(choice) {
 			case 0: 
@@ -46,12 +47,9 @@ public class MainClass {
 				Date dt1;
 				try {
 					dt1 = StdFormat.parse(d);
-				
-				long time = dt1.getTime();//millisecond
-				
-				
-				Student student = new Student(0, name, marks, time);
-				studentService.addStudent(student);
+					
+					Student student = new Student(0, name, marks, dt1);
+					studentService.addStudent(student);
 				} catch (ParseException e) {
 					e.printStackTrace();
 				}
@@ -69,12 +67,9 @@ public class MainClass {
 				
 				try {
 					dt1 = StdFormat.parse(d);
-				
-				long time = dt1.getTime();//millisecond
-				
-				
-				Student student = new Student(rno, name, marks, time);
-				studentService.modifyStudent(student);
+		
+					Student student = new Student(rno, name, marks, dt1);
+					studentService.modifyStudent(student);
 				} catch (ParseException e) {
 					e.printStackTrace();
 				}			

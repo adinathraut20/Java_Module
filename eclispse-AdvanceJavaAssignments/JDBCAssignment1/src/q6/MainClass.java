@@ -4,9 +4,6 @@
 
 package q6;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 import q6.StudentClass.Student;
 import q6.StudentServices.StudentService;
@@ -20,11 +17,12 @@ public class MainClass {
 		StudentService studentService = new StudentImple();
 		
 		while(true){
-			System.out.println("0 : Exit");
+			
 			System.out.println("1 : Show Student list");
 			System.out.println("2 : Add Student record");
 			System.out.println("3 : Modify Student record");
 			System.out.println("4 : Remove Student record");
+			System.out.println("0 : Exit");
 			int choice = sc.nextInt();
 			switch(choice) {
 			case 0: 
@@ -42,19 +40,9 @@ public class MainClass {
 				float marks  = sc.nextFloat();
 				System.out.print("Date of Birth yyyy-mm-dd : ");
 				String d = sc.next();
-				SimpleDateFormat StdFormat = new SimpleDateFormat("yyyy-mm-dd");
-				Date dt1;
-				try {
-					dt1 = StdFormat.parse(d);
-				
-				long time = dt1.getTime();//millisecond
-				
-				
-				Student student = new Student(0, name, marks, time);
+				Student student = new Student(0, name, marks,d);
 				studentService.addStudent(student);
-				} catch (ParseException e) {
-					e.printStackTrace();
-				}
+			
 				break;
 			case 3:
 				System.out.print("Enter Roll No and Details to Modify Record\nRoll No : ");
@@ -65,20 +53,10 @@ public class MainClass {
 				marks  = sc.nextFloat();
 				System.out.print("Date of Birth yyyy-mm-dd : ");
 				d = sc.next();
-				StdFormat = new SimpleDateFormat("yyyy-mm-dd");
-				
-				try {
-					dt1 = StdFormat.parse(d);
-				
-				long time = dt1.getTime();//millisecond
-				
-				
-				Student student = new Student(rno, name, marks, time);
-				studentService.modifyStudent(student);
-				} catch (ParseException e) {
-					e.printStackTrace();
-				}			
+				student = new Student(rno, name, marks, d);
+				studentService.modifyStudent(student);		
 				break;
+				
 			case 4:
 				System.out.print("Enter Roll No. to Delete Record : ");
 				rno = sc.nextInt();

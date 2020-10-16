@@ -12,9 +12,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Savepoint;
 import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class q12 {
@@ -32,11 +29,6 @@ public class q12 {
 			float salary = sc.nextFloat();
 			System.out.print("Date of Joining yyyy-mm-dd : ");
 			String d = sc.next();
-			SimpleDateFormat StdFormat = new SimpleDateFormat("yyyy-mm-dd");
-			Date dt1 = StdFormat.parse(d);
-			long time = dt1.getTime();//millisecond
-			java.sql.Date dob = new java.sql.Date(time);
-			
 			System.out.print("Enter Employee Address\nCity : ");
 			String city = sc.next();
 			System.out.print("Country : ");
@@ -51,7 +43,7 @@ public class q12 {
 			save = con.setSavepoint();
 			Statement s = con.createStatement();
 			
-			String query1 = "insert into employee values("+eno+",'"+name+"',"+salary+",'"+dob+"');";
+			String query1 = "insert into employee values("+eno+",'"+name+"',"+salary+",'"+d+"');";
 			String query2 = "insert into employeeAddress values("+addId+",'"+city+"','"+country+"',"+eno+");";
 			s.addBatch(query1);
 			s.addBatch(query2);
@@ -67,9 +59,7 @@ public class q12 {
 		} catch (ClassNotFoundException | SQLException e) {
 			con.rollback(save);
 			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+		} 
 
 	}
 

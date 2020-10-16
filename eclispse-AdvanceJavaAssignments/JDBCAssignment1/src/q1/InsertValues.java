@@ -8,9 +8,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class InsertValues {
@@ -29,15 +26,11 @@ public class InsertValues {
 				float marks = sc.nextFloat();
 				System.out.print("Date of Birth yyyy-mm-dd : ");
 				String d = sc.next();
-				SimpleDateFormat StdFormat = new SimpleDateFormat("yyyy-mm-dd");
-				Date dt1 =  StdFormat.parse(d);
-				long time = dt1.getTime();//millisecond
-				java.sql.Date dob = new java.sql.Date(time);
 				PreparedStatement st = con.prepareStatement("insert into student(name,marks,dob) values(?,?,?)");		
 				//st.setInt(1, rno);
 				st.setString(1,Name);
 				st.setFloat(2,marks);
-				st.setDate(3, dob);
+				st.setString(3, d);
 				int flag = st.executeUpdate();
 				con.close();
 				sc.close();
@@ -50,10 +43,7 @@ public class InsertValues {
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			} 
 			
 	}
 

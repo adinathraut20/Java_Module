@@ -1,6 +1,6 @@
 package q9.StudentServices;
 
-import q6.StudentClass.Student;
+import q9.StudentClass.Student;
 
 public interface StudentService {
 	public int addStudent(Student student);

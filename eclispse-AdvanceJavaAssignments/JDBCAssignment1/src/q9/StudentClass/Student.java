@@ -1,12 +1,14 @@
 package q9.StudentClass;
 
+import java.util.Date;
+
 public class Student {
 	private int rno;
 	private String name;
 	private float marks;
-	private long time;
+	private Date time;
 	
-	public Student(int rno,String name,float marks,long time){
+	public Student(int rno,String name,float marks,Date time){
 		this.rno = rno;
 		this.name = name;
 		this.marks = marks;
@@ -37,11 +39,11 @@ public class Student {
 		this.marks = marks;
 	}
 
-	public long getTime() {
+	public Date getDate() {
 		return time;
 	}
 
-	public void setTime(long time) {
+	public void setDate(Date time) {
 		this.time = time;
 	}
 	

@@ -23,11 +23,10 @@ public class StudentImple implements StudentService {
 	public int addStudent(Student student) {
 		try {
 		Connection Con = Connect.getCon();
-		Statement st = Con.createStatement();	
-		java.sql.Date dob = new java.sql.Date(student.getTime());	
-		String query = "insert into student(name,marks,dob) values('"+student.getName()+"',"+student.getMarks()+",'"+dob+"');";
+		Statement st = Con.createStatement();
+		String query = "insert into student(name,marks,dob) values('"+student.getName()+"',"+student.getMarks()+",'"+student.getDate()+"');";
 		int flag = st.executeUpdate(query);
-		System.out.println("Record Inserted."+ flag);
+		System.out.println("Record Inserted : "+ flag);
 		Con.close();
 		}
 		catch (SQLException e) {	
@@ -42,9 +41,8 @@ public class StudentImple implements StudentService {
 	public int modifyStudent(Student student) {
 		try {
 			Connection Con = Connect.getCon();
-			Statement st = Con.createStatement();	
-			java.sql.Date dob = new java.sql.Date(student.getTime());	
-			String query = "update student set name ='"+student.getName()+"',marks = "+student.getMarks()+",dob = '"+dob+"' where rno = "+student.getRno()+";";
+			Statement st = Con.createStatement();		
+			String query = "update student set name ='"+student.getName()+"',marks = "+student.getMarks()+",dob = '"+student.getDate()+"' where rno = "+student.getRno()+";";
 			int flag = st.executeUpdate(query);
 			System.out.println("Record Updated : "+ flag);
 			Con.close();

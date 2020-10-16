@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import q6.StudentClass.Student;
-import q6.StudentServices.StudentService;
-import q6.connect.DBConnection;
+import q9.StudentClass.Student;
+import q9.StudentServices.StudentService;
+import q9.connect.DBConnection;
 
 public class StudentImple implements StudentService {
 
@@ -25,7 +25,8 @@ public class StudentImple implements StudentService {
 		//st.setInt(1,student.getRno());
 		st.setString(1,student.getName());
 		st.setFloat(2,student.getMarks());
-		java.sql.Date dob = new java.sql.Date(student.getTime());
+		long time = student.getDate().getTime();
+		java.sql.Date dob = new java.sql.Date(time);
 		st.setDate(3, dob);
 		
 		int flag = st.executeUpdate();
@@ -48,7 +49,8 @@ public class StudentImple implements StudentService {
 			//st.setInt(1,student.getRno());
 			st.setString(1,student.getName());
 			st.setFloat(2,student.getMarks());
-			java.sql.Date dob = new java.sql.Date(student.getTime());
+			long time = student.getDate().getTime();
+			java.sql.Date dob = new java.sql.Date(time);
 			st.setDate(3, dob);
 			st.setInt(4, student.getRno());
 				

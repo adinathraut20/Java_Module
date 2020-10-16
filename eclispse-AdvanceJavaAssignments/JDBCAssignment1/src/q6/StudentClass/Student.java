@@ -4,13 +4,13 @@ public class Student {
 	private int rno;
 	private String name;
 	private float marks;
-	private long time;
+	private String date;
 	
-	public Student(int rno,String name,float marks,long time){
+	public Student(int rno,String name,float marks,String date){
 		this.rno = rno;
 		this.name = name;
 		this.marks = marks;
-		this.time = time;
+		this.date = date;
 	}
 
 	public int getRno() {
@@ -37,12 +37,12 @@ public class Student {
 		this.marks = marks;
 	}
 
-	public long getTime() {
-		return time;
+	public String getDate() {
+		return date;
 	}
 
-	public void setTime(long time) {
-		this.time = time;
+	public void setDate(String date) {
+		this.date = date;
 	}
 	
 }
