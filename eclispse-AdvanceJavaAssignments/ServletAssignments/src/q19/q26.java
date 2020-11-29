@@ -17,30 +17,67 @@ public class q26 extends HttpServlet{
 	
 	
 
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		PrintWriter out = resp.getWriter();
 		HttpSession session = req.getSession(true);
-		Integer c = (Integer) session.getAttribute("c");
-		if(c == null || c == 0) {
-			c=1;
-			session.setAttribute("c", c);
-		}else {
-			c++;
-			session.setAttribute("c", c);
-		}
+		String uname = req.getParameter("uname");
+		session.setAttribute("uname", uname);
 		
-		Integer count = (Integer)req.getServletContext().getAttribute("count");
-		if(count == null || count == 0) {
-			count = 1;
-			req.getServletContext().setAttribute("count", count);
+		if(uname.equals("Adinath") || session.getAttribute("uname").equals("Adinath")) {		
 			
-		}else {
-			count++;
-			req.getServletContext().setAttribute("count", c); 
+			Integer count = (Integer)req.getServletContext().getAttribute("count");
+			if(count == null || count == 0) {
+				count = 1;
+				req.getServletContext().setAttribute("count", count);
+				out.print("<h1>User Visited Count : "+count+" </h1>");
+				out.print("<br><h1>Hiii "+uname+"</h1>");
+				out.flush();
+				out.close();
+			}else {
+				count++;
+				req.getServletContext().setAttribute("count", count); 
+				out.print("<h1>User Visited Count : "+count+"</h1>");
+				out.print("<br><h1>Welcome Back!!! "+uname+"</h1>");
+				out.flush();
+				out.close();
+			}
 		}
-		
-		out.print("<h1>User Visited Count : "+count+" "+c+"</h1>");
+		out.print("<br><h1>Hiii "+uname+"</h1>");
 		out.flush();
 		out.close();
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.sendRedirect("indexq26.html");
+		HttpSession session = req.getSession(false);
+
+		System.out.println(session);
+		
+		if(session == null || session.getAttribute("uname") == null) {
+			//resp.sendRedirect("indexq26.html");
+		}
+		String uname = req.getParameter("uname");
+		
+		if(uname.equals("Adinath") || session.getAttribute("uname").equals("Adinath")) {		
+			PrintWriter out = resp.getWriter();
+			Integer count = (Integer)req.getServletContext().getAttribute("count");
+			if(count == null || count == 0) {
+				count = 1;
+				req.getServletContext().setAttribute("count", count);
+				out.print("<h1>User Visited Count : "+count+" </h1>");
+				out.print("<br><h1>Hiii "+uname+"</h1>");
+				out.flush();
+				out.close();
+			}else {
+				count++;
+				req.getServletContext().setAttribute("count", count); 
+				out.print("<h1>User Visited Count : "+count+"</h1>");
+				out.print("<br><h1>Welcome Back!!! "+uname+"</h1>");
+				out.flush();
+				out.close();
+			}
+		}
 	}
 }

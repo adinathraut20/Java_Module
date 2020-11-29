@@ -1,0 +1,403 @@
+
+Hackeraank Challenge String
+--------------------------------
+1.Count Palindromes
+====================
+public class Solution
+{
+    static InputStream is;
+    static PrintWriter out;
+    static String INPUT = "";
+    static void solve()
+    {
+        for(int T = ni();T >= 1;T--)
+        {
+            long K = nl();
+            long start = Math.max(0, (long)Math.sqrt(2*K)-10);
+            int len = 0;
+            long i;
+            
+            for(i = start;;i++)
+            {
+                if((i+1)*(i+2)/2 > K)
+                {
+                    break;
+                }
+            }
+            K -= i*(i+1)/2;
+            len += i;
+            int step = 0;
+            while(true)
+            {
+                if(K == 0)
+                {
+                    break;
+                }
+                if(step == 0)
+                {
+                    for(i = 1;;i++)
+                    {
+                        if((i+1)*(i+2)/2 > K)
+                        {
+                            break;
+                        }
+                    }
+                    len += i;
+                    K -= i*(i+1)/2;
+                }
+                else
+                {
+                    if(K <= 2)
+                    {
+                        len++;
+                        break;
+                    }
+        
+                    for(i = 1;;i++)
+                    {
+                        if((i+2)*(i+3)/2-1 > K)
+                        {
+                            break;
+                        }
+                    }
+                    len += i;
+                    K -= (i+1)*(i+2)/2-1;
+                }
+                step++;
+            }
+            out.println(len);
+        }
+    }
+    public static void main(String[] args) throws Exception
+    {
+        long S = System.currentTimeMillis();
+        is = INPUT.isEmpty() ? System.in : new ByteArrayInputStream(INPUT.getBytes());
+        out = new PrintWriter(System.out);
+        solve();
+        out.flush();
+        long G = System.currentTimeMillis();
+        tr(G-S+"ms");
+    }
+    
+    private static boolean eof()
+    {
+        if(lenbuf == -1)return true;
+        int lptr = ptrbuf;
+        while(lptr < lenbuf)
+            if(!isSpaceChar(inbuf[lptr++]))
+                return false;
+            try
+            {
+                is.mark(1000);
+                while(true)
+                {
+                    int b = is.read();
+                
+                    if(b == -1)
+                    {
+                        is.reset();
+                        return true;
+                    }
+                    else if(!isSpaceChar(b))
+                    {
+                        is.reset();
+                        return false;
+                    }
+                }
+            }   
+            catch (IOException e)
+            {
+                return true;
+            }
+        }
+        private static byte[] inbuf = new byte[1024];
+        static int lenbuf = 0, ptrbuf = 0;
+        private static int readByte()
+        {
+            if(lenbuf == -1)
+                throw new InputMismatchException();
+            
+            if(ptrbuf >= lenbuf)
+            {
+                ptrbuf = 0;
+                try
+                {
+                    lenbuf = is.read(inbuf);
+                }
+                catch (IOException e)
+                {
+                    throw new InputMismatchException();
+                }
+                if(lenbuf <= 0)return -1;
+            }
+            return inbuf[ptrbuf++];
+        }
+        private static boolean isSpaceChar(int c)
+        {
+            return !(c >= 33 && c <= 126);
+        }
+    
+        private static int skip()
+        {
+            int b;
+            
+            while((b = readByte()) != -1 && isSpaceChar(b));
+                return b;
+        }
+    
+        private static double nd()
+        {
+            return Double.parseDouble(ns());
+        }
+        
+        private static char nc()
+        {
+            return (char)skip();
+        }
+        
+        private static String ns()
+        {
+            int b = skip();
+            StringBuilder sb = new StringBuilder();
+            
+            while(!(isSpaceChar(b)))
+            {
+                sb.appendCodePoint(b);
+                b = readByte();
+            }
+            
+            return sb.toString();
+        }
+        private static char[] ns(int n)
+        {
+            char[] buf = new char[n];
+            int b = skip(), p = 0;
+            
+            while(p < n && !(isSpaceChar(b)))
+            {
+                buf[p++] = (char)b;
+                b = readByte();
+            }
+            
+            return n == p ? buf : Arrays.copyOf(buf, p);
+        }
+        private static char[][] nm(int n, int m)
+        {
+            char[][] map = new char[n][];
+            
+            for(int i = 0;i < n;i++)
+                map[i] = ns(m);
+            
+            return map;
+        }
+        private static int[] na(int n)
+        {
+            int[] a = new int[n];
+            
+            for(int i = 0;i < n;i++)
+                a[i] = ni();
+            return a;
+        }
+        private static int ni()
+        {
+            int num = 0, b;
+            boolean minus = false;
+            while((b = readByte()) != -1 && !((b >= '0' && b <= '9') || b == '-'));
+            if(b == '-')
+            {
+                minus = true;
+                b = readByte();
+            }
+            while(true)
+            {
+                if(b >= '0' && b <= '9')
+                {
+                    num = num * 10 + (b - '0');
+                }
+                else
+                {
+                    return minus ? -num : num;
+                }
+                b = readByte();
+            }
+        }
+        private static long nl()
+        {
+            long num = 0;
+            int b;
+            boolean minus = false;
+            while((b = readByte()) != -1 && !((b >= '0' && b <= '9') || b == '-'));
+            if(b == '-')
+            {
+                minus = true;
+                b = readByte();
+            }
+            while(true)
+            {
+                if(b >= '0' && b <= '9')
+                {
+                    num = num * 10 + (b - '0');
+                }
+                else
+                {
+                   return minus ? -num : num;
+                }
+                b = readByte();
+            }
+        }
+    private static void tr(Object... o)
+    {
+        if(INPUT.length() != 0)
+            System.out.println(Arrays.deepToString(o));
+    }
+}
+
+2. Matching Book Names and Descriptions
+========================================
+
+public class Solution {
+   static void match(String[] names, String[] descriptions) {
+           for(int a=0; a< descriptions.length ; ++a)
+       {
+           //System.out.println("descriptions:" + descriptions[a]);
+            String des[] = descriptions[a].split(" ");
+            int mark = 0;
+           int maxMark = 0;
+           int number = 0;
+             for(int b=0; b < names.length ; ++b)
+                {
+               String name[] = names[b].split(" ");
+                for (String n: name) {                    
+                   for (String d: des) {  
+                       //System.out.println("n:" + n + ", d:"+ d);
+                       if(n.trim().equals(d.trim()))
+                       {
+                           //System.out.println("Match n:" + n + ", d:"+ d);
+                           ++mark;
+                       }
+                    }
+               }
+               if(mark > maxMark)
+                {
+                    maxMark = mark;
+                   number = b+1;
+                }
+            }
+         System.out.println(number);
+    }
+    }
+  public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+         Scanner scan = new Scanner(System.in);
+        int count = scan.nextInt();
+          if(count>0)
+            scan.nextLine();
+        else
+        {
+            scan.close();
+            return;
+       }
+        String[] bookName = new String[count];
+        String[] bookDescription = new String[count];
+           for(int a=0; a< count ; ++a)
+        {
+            bookName[a] = scan.nextLine().toLowerCase();
+        }
+             scan.nextLine();
+           for(int a=0; a< count ; ++a)
+        {
+            bookDescription[a] = scan.nextLine().toLowerCase();
+        }
+  scan.close();
+         match(bookName, bookDescription);
+    }
+}
+
+
+3.Balancing Parentheses
+==========================
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        
+        sc.nextLine();
+        sc.nextLine();
+        
+        String str = sc.nextLine();
+        
+        char left = '(';
+        char right = ')';
+        
+        int leftCounter = 0;
+        int rightCounter = 0;
+        
+        for(int i=0; i<str.length(); i++) {
+            
+            if(str.charAt(i) == left)
+                leftCounter++;
+            else if(str.charAt(i) == right)
+                rightCounter++;
+            
+        }
+        
+        if(leftCounter == rightCounter || leftCounter == 0 && rightCounter == 0)
+            System.out.println('0');
+        else if(leftCounter < rightCounter)
+            System.out.println((rightCounter - leftCounter)/2);
+        else if(rightCounter < leftCounter)
+            System.out.println((leftCounter - rightCounter)/2);
+    }
+}
+
+4.The Recurrence
+====================
+class Solution{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        String input= sc.nextLine();
+
+        input = input.replaceAll(" ","");
+        char input1[] =  input.toCharArray();
+        Arrays.sort(input1);
+       
+        int visited [] = new int[input.length()];
+        Element arr [] = new Element[input.length()];
+        int k=0;
+        
+        for(int i = 0 ; i < input1.length ; i++){
+            String str1="*";
+            for(int j = i+1 ; j < input1.length;j++){
+                if(input1[i]== input1[j]){
+                  
+                    str1+= "*";
+                    visited[j]=1;
+                }
+            }
+            if(visited [i] != 1){
+                Element e = new Element(str1,input1[i]);
+                arr[k]=e;
+                k++;
+            }
+        
+        }
+        for(int i = 0 ; i < k ;i++){
+            System.out.println(arr[i].ch+":"+arr[i].star);
+            if(i==k-1)
+                break;
+            System.out.println("");
+        }
+    }
+}
+class Element{
+    String star;
+    char ch ;
+    Element(String star,char ch){
+       this.star= star;
+        this.ch=ch;
+
+    }
+}

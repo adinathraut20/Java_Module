@@ -1,0 +1,172 @@
+Collection 
+
+String name1, name2, name3;
+
+String strArray[] = new String[200];
+strArray[0]
+strArray[1]
+strArray[201] - array index out of bound exception
+
+1. array is fixed size
+2. homogenous elements
+
+java.util
+
+Iterable 
+Collection
+
+- collection supports only object based values
+- does not support primitive types
+
+Integer, int(wrong)
+String 
+Student
+Payment
+Transaction
+
+- add(Object)
+- addAll(Collection)
+- remove(Object)
+- removeAll()
+- size
+- isEmpty
+
+List	-	list of things
+Set		-	cares about uniqueness	
+Map		-	stores key-value pair
+
+
+10, 20, 30, 40, 50, 60
+List, Set, Map - all are interfaces
+
+List
+- index based collection
+
+add(index, Object)
+remove(index)
+get(index)
+set(index, Object)
+
+ArrayList
+LinkedList
+Vector
+
+
+ArrayList
+---------
+- growable sized array
+- underlying data structure is array
+add(Object)
+obj[10] 
+10 elts are inserted
+add(101) - 11 th elt
+obj[15]
+- it maintains the insertion order
+add - 10, 20, 30
+reading - 10, 20, 30
+- it allows duplicates
+add - 10, 20, 30, 10, 10, 20
+size - 6
+- it allows null values
+add - 10, null, 20, null
+
+Integer iObj;		//default value - null
+int iPrim;			//default value - 0
+
+Integer iObj;		//memory is NOT yet allocated - object is not created / initialized
+int iPrim;			//memory is allocated 4 bytes
+
+- it allows to store hetrogeneous elements
+
+atm - 100, 200, 500, 200, 100, 200, 200, null, 
+fav_sub - java, c, c++, java, java, c
+
+LinkedList
+----------
+- it follows all the property of arraylist
+- the underlying data structure is doubly linked list
+- it doesnt use array
+- it allows duplictes
+- it allows null value insertion
+- it maintains insertion order
+
+addFirst()
+addLasst()
+removeFirst()
+removeLast()
+listIteraor()
+
+ArrayList							LinkedList
+- array based							doubly linked list
+- easy to read, random access			read is costly
+- remove, insert in middle				
+  costly operations						this gives best performance
+- elements are stored continuous		not stored in continuous
+
+Set
+----
+- it stores only distinct values
+- does not allow duplicates
+HashSet, LinkedHashSet, TreeSet
+
+HashSet
+- it does not allow duplicates
+- null values are allowed (only one null)
+- HashTable(hashCode) is the underlying data structure
+one - 333
+asd	- 334
+asdfas - 2342
+asfsd - 4242
+one - 333
+null - 0000
+- it does not maintain the insertion order
+insertion 10, 20, 30
+read - you don't know the output order
+- it does not follows index based
+get(index) NO METHOD
+use Iterator to read the values from the Set collections
+- sorting is not applicable
+
+Object
+equals()
+hashCode()
+- internally it converts local address of the object into an integer
+
+LinkedHashSet
+-------------
+- stores only distinct objects
+- only one will be inserted
+- Doubly linked list & hash code
+- insertion order - YES it maintains insertion order
+
+TreeSet
+--------
+- it does not allow duplicates
+- insertion order - NO it does not maintain
+- underlying data structure - Balanced Tree
+- Sorting - YES it stores the elements based on the natural sorting order
+- null values - DOES NOT allow null values (not even one null)
+- hetrogenous elts - NO it allows only homogenous elts
+
+1,2,3,4,5 - first 1 last - 5 
+5,4,3,2,1 - first 5 last - 5
+a,b,c,d,e
+
+- first()
+ this method returns the first element from the treeset
+- last()
+- pollFirst()
+ this method returns the first element and removes that element
+- pollLast()
+
+Custom Sorting implementation
+-----------------------------
+Comparator
+Comparable
+both are interfaces
+
+
+
+
+
+

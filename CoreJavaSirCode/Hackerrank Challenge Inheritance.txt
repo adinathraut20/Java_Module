@@ -1,0 +1,127 @@
+Feb20 Challenge Inheritance
+===============================
+
+1.Java Inheritance II
+======================
+class Arithmetic 
+{
+    int add(int a,int b)
+    {
+        
+        return a+b;
+        
+    }
+}
+class Adder extends Arithmetic{}
+
+2.Multi Level Inheritance
+==========================
+class Triangle{
+	public void triangle(){
+			System.out.println("I am a triangle");
+		}
+};
+
+class Isosceles extends Triangle{
+  	public void isosceles(){
+    		System.out.println("I am an isosceles triangle)";
+  		}
+};
+class Equilateral extends Isosceles
+{
+    public void equilateral()
+        {
+           System.out.println("I am an equilateral triangle");
+        }
+};
+//Write your code here.
+
+public static void main(String args[]){
+  
+    Equilateral eqr = new Equilateral();
+    eqr.equilateral();
+    eqr.isosceles();
+    eqr.triangle();
+    return 0;
+}
+
+3.Inheritance
+==============
+class Student extends Person{
+    private int[] testScores;
+
+  Student(String firstName, String lastName, int identification, int [] testScores){
+      super(firstName,lastName,identification);
+      this.testScores=testScores;
+  }
+    
+    char calculate(){
+        int sum=0; 
+        for(int i=0;i<testScores.length;i++){
+            sum=sum+testScores[i];
+        }
+        int avg = sum/testScores.length;
+        char grade;
+        if( avg<=100 && avg>= 90)
+            grade='O';
+        else if(avg< 90 && avg>=80)
+            grade='E';
+        else if(avg< 80 && avg>=70)
+            grade='A';
+        else if(avg<70 && avg>=55)
+            grade='P';
+        else if(avg< 55 && avg>=40)
+            grade='D';
+        else
+            grade='T';
+        return grade;
+    }
+}
+4.Inheritance Concept
+======================
+class Point
+{
+    double x, y;
+    
+    Point()
+    {
+        x = 0;
+        y = 0;
+    }
+    
+    Point(double x, double y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+    
+    void distance(Point p1, Point p2)
+    {
+        
+        double res = Math.sqrt(Math.pow((p1.x-p2.x),2)+Math.pow((p1.y-p2.y),2));
+        
+        System.out.println(res);
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Point p1 = new Point();
+        Point p2 = new Point();
+        
+        Scanner sc = new Scanner(System.in);
+        
+        p1.x = sc.nextDouble();
+        p1.y = sc.nextDouble();
+        p2.x = sc.nextDouble();
+        p2.y = sc.nextDouble();
+        
+        p1 = new Point(p1.x,p1.y);
+        p2 = new Point(p2.x,p2.y);
+        
+        p1.distance(p1,p2);
+    }
+}

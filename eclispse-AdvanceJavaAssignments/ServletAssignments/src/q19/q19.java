@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/home")
 public class q19 extends HttpServlet{
 
+	public q19(){
+		System.out.println("hi");
+	}
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 			
